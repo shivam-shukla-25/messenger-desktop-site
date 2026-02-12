@@ -7,7 +7,7 @@ import {
   searchMessages,
 } from "../db/queries";
 import { getDB } from "../db/database";
-
+import { closeWebSocketServer } from "../websocket/server";
 
 export function registerChatHandlers() {
   ipcMain.handle("chats:get", (_, offset: number) => {
@@ -71,5 +71,8 @@ ipcMain.handle("chats:markRead", (_, chatId: string) => {
   `).run(chatId);
 });
 
+  ipcMain.handle("ws:simulateDrop", () => {
+  closeWebSocketServer();
+});
 
 }

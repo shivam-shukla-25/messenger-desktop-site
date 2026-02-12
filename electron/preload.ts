@@ -23,6 +23,7 @@ contextBridge.exposeInMainWorld("api", {
   markChatAsRead: (chatId: string) =>
   ipcRenderer.invoke("chats:markRead", chatId),
 
- 
+  simulateConnectionDrop: () =>
+  ipcRenderer.invoke("ws:simulateDrop"),
 
 });

@@ -45,3 +45,9 @@ export function startWebSocketServer() {
   });
   console.log(`WebSocket server running on ws://localhost:${AppConfig.websocket.port}`);
 }
+
+export function closeWebSocketServer() {
+  if (wss) {
+    wss.clients.forEach((client) => client.close());
+  }
+}

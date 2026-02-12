@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, Typography, Button, Chip } from "@mui/material";
+import { Box, Button, Chip } from "@mui/material";
 import ChatList from "./components/ChatList";
 import MessageView from "./components/MessageView";
 import { connectWS } from "./services/wsClient";
